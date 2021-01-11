@@ -1,6 +1,8 @@
-# Идеальный вес. Программа запрашивает у пользователя имя и рост и выводит идеальный вес по формуле
-# <рост> - 110, после чего выводит результат пользователю на экран с обращением по имени.
-# Если идеальный вес получается отрицательным, то выводится строка "Ваш вес уже оптимальный"
+# frozen_string_literal: true
+
+# Ideal weight. Program asks user's name and height - outputs ideal weight according to
+# the formula <height> - 110, and finally displays the result with a call by name.
+# If the result is negative, the output should be: "Your weight is already ideal!"
 
 puts 'Enter your name:'
 name = gets.chomp

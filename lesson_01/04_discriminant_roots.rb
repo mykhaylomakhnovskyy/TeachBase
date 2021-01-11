@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-# Квадратное уравнение. Пользователь вводит 3 коэффициента a, b и с.
-# Программа вычисляет дискриминант (D) и корни уравнения (x1 и x2, если они есть) и
-# выводит значения дискриминанта и корней на экран. При этом возможны следующие варианты:
-# Если D > 0, то выводим дискриминант и 2 корня
-# Если D = 0, то выводим дискриминант и 1 корень (т.к. они в этом случае равны)
-# Если D < 0, то выводим дискриминант и сообщение "Корней нет"
+# Quadratic equation. The user enters 3 coefficients a, b and c. The program calculates
+# the discriminant (D) and roots of the equation (x1 and x2, if any) and displays the
+# values of the discriminant and roots on the screen. In this case, the following options
+# are possible: If D> 0, then print the discriminant and 2 roots If D = 0, then print the
+# discriminant and 1 root (since they are equal in this case) If D <0, then print the
+# discriminant and the message " No roots "
 puts 'Enter first coefficient:'
 a = gets.chomp.to_i
 puts 'Enter second coefficient:'

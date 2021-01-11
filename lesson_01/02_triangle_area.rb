@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-# Площадь треугольника. Площадь треугольника можно вычилсить,
-# зная его основание (a) и высоту (h) по формуле: 1/2*a*h.
-# Программа должна запрашивать основание и высоту треуголиника
-# и возвращать его площадь.
+# Area of a triangle. The area of a triangle can be calculated by knowing its base (a) and
+# height (h) by the formula: 1/2 * a * h. The program should query the base and height of
+# the triangle and return its area.
 puts 'Enter a:'
 a = gets.chomp.to_i
 puts 'Enter h'

@@ -1,16 +1,13 @@
 # frozen_string_literal: true
 
-# Прямоугольный треугольник. Программа запрашивает у пользователя
-# 3 стороны треугольника и определяет, является ли треугольник
-# прямоугольным, используя теорему Пифагора (www-formula.ru) и
-# выводит результат на экран. Также, если треугольник является при
-# этом равнобедренным (т.е. у него равны любые 2 стороны),
-# то дополнительно выводится информация о том, что треугольник
-# еще и равнобедренный. Подсказка: чтобы воспользоваться теоремой
-# Пифагора, нужно сначала найти самую длинную сторону (гипотенуза)
-# и сравнить ее значение в квадрате с суммой квадратов двух остальных сторон.
-# Если все 3 стороны равны, то треугольник равнобедренный и равносторонний,
-# но не прямоугольный.
+# Right triangle. The program asks the user for 3 sides of the triangle and determines
+# whether the triangle is rectangular using the Pythagorean theorem (www-formula.ru) and
+# displays the result on the screen. Also, if the triangle is at the same time isosceles
+# (that is, it has any 2 sides equal), then additional information is displayed that the
+# triangle is also isosceles. Hint: to use the Pythagorean theorem, you must first find
+# the longest side (hypotenuse) and compare its value squared with the sum of the squares
+# of the other two sides. If all 3 sides are equal, then the triangle is isosceles and
+# equilateral, but not right-angled.
 
 puts 'Enter 1 side:'
 a = gets.chomp.to_i
