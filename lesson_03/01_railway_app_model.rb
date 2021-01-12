@@ -18,7 +18,8 @@ class Station
   end
 
   def show_all_trains
-    @trains.each { |train| puts train.number }
+    puts "On the #{@name} station:"
+    @trains.each { |train| puts "Train number: #{train.number}" }
   end
 
   def show_all_train_types
@@ -37,6 +38,7 @@ end
 
 # Route
 class Route
+  attr_reader :stations
   def initialize(start_station, final_station)
     @stations = [start_station, final_station]
   end
@@ -65,6 +67,7 @@ class Train
     @type = type
     @speed = 0
     @carriages = carriages
+    @current_station = -1
   end
 
   def speed_up(speed)
@@ -87,7 +90,7 @@ class Train
     if @speed.zero?
       @carriages += 1
     else
-      puts 'You are moving too fast! Slow down!'
+      puts 'You are moving too fast to pin a carriage! Slow down!'
     end
   end
 
@@ -97,6 +100,26 @@ class Train
 
   def take_route(route)
     @route = route
+  end
+
+  def follow_the_route
+    if @current_station >= 0 && @current_station < @route.stations.size - 1
+      @route.stations[@current_station].send_train(self)
+      @current_station += 1
+      puts 'Moving to the next station!'
+    elsif @current_station == @route.stations.size - 1
+      puts 'It is the last station!'
+    else
+        @current_station += 1
+        puts 'Starting our route!'
+    end
+    @route.stations[@current_station].take_train(self)
+    puts "It is #{@route.stations[@current_station].name}"
+  end
+
+  def show_nearby_stations
+    puts "Previous station: #{@route.stations[@current_station-1].name}" if @current_station > 0
+    puts "Next station: #{@route.stations[@current_station+1].name}" if @current_station < @route.stations.size-1
   end
 end
 
@@ -118,12 +141,13 @@ train2.take_route(route2)
 train1.take_route(route1)
 
 route1.show_all_stations
-station2.take_train(train1)
-station2.send_train(train1)
-station1.take_train(train1)
-station1.send_train(train1)
-station4.take_train(train1)
-station3.take_train(train2)
-station3.send_train(train1)
-station4.take_train(train2)
+
+train1.follow_the_route
+train1.show_nearby_stations
+train1.follow_the_route
+train1.show_nearby_stations
+train1.follow_the_route
+
 station4.show_all_trains
+train1.show_nearby_stations
+train1.follow_the_route
