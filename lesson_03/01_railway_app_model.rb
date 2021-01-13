@@ -39,6 +39,7 @@ end
 # Route
 class Route
   attr_reader :stations
+
   def initialize(start_station, final_station)
     @stations = [start_station, final_station]
   end
@@ -48,7 +49,11 @@ class Route
   end
 
   def delete_middle_station(station)
-    @stations.delete(station)
+    if station != @stations[0] && station != @stations[@stations.size - 1]
+      @stations.delete(station)
+    else
+      puts 'You can\'t delete first or last station!'
+    end
   end
 
   def show_all_stations
@@ -102,24 +107,27 @@ class Train
     @route = route
   end
 
-  def follow_the_route
+  def current_station
     if @current_station >= 0 && @current_station < @route.stations.size - 1
       @route.stations[@current_station].send_train(self)
-      @current_station += 1
       puts 'Moving to the next station!'
+      @current_station += 1
     elsif @current_station == @route.stations.size - 1
       puts 'It is the last station!'
+      @current_station
     else
-        @current_station += 1
-        puts 'Starting our route!'
+      @current_station += 1
     end
-    @route.stations[@current_station].take_train(self)
-    puts "It is #{@route.stations[@current_station].name}"
+  end
+
+  def follow_the_route
+    @route.stations[current_station].take_train(self)
+    puts "It is #{@route.stations[current_station].name}"
   end
 
   def show_nearby_stations
-    puts "Previous station: #{@route.stations[@current_station-1].name}" if @current_station > 0
-    puts "Next station: #{@route.stations[@current_station+1].name}" if @current_station < @route.stations.size-1
+    puts "Previous station: #{@route.stations[@current_station - 1].name}" if @current_station.positive?
+    puts "Next station: #{@route.stations[@current_station + 1].name}" if @current_station < @route.stations.size - 1
   end
 end
 
@@ -151,3 +159,6 @@ train1.follow_the_route
 station4.show_all_trains
 train1.show_nearby_stations
 train1.follow_the_route
+route1.delete_middle_station(station2)
+route1.delete_middle_station(station4)
+route1.show_all_stations
