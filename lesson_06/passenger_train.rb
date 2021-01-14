@@ -5,9 +5,9 @@ require_relative 'passenger_carriage'
 # Passenger Train
 class PassengerTrain < Train
   def pin_carriage
-    return puts 'You are moving too fast to pin a carriage! Slow down!' unless @speed.zero?
+    raise 'You are moving too fast to pin a carriage! Slow down!' unless @speed.zero?
 
-    @carriages.push(PassengerCarriage.new)
+    @carriages.push(PassengerCarriage.new) if @speed.zero?
   end
 
   def unpin_carriage(carriage_id)

@@ -4,10 +4,12 @@
 class Station
   attr_reader :name
 
+  STATION_NAME_FORMAT = /^\D{3,9}$/i.freeze
   @@stations = []
   def initialize(name)
     @name = name
     @trains = []
+    validate!
     @@stations.push(self)
   end
 
@@ -24,24 +26,18 @@ class Station
     @trains.each { |train| puts "  Train number: #{train.number}" }
   end
 
-  def show_all_train_types
-    freight_trains = 0
-    pass_trains = 0
-    @trains.each do |train|
-      if train.type == 1
-        pass_trains += 1
-      else
-        freight_trains += 1
-      end
-    end
-    puts "Freight trains: #{freight_trains}\nPassenger trains: #{pass_trains}"
-  end
-
   def self.find(station_name)
     @@stations.each { |station| return station if station.name == station_name }
   end
 
   def self.all
     @@stations
+  end
+
+  def validate!
+    raise 'The name of station is too short!' if @name.length < 3
+    raise 'The name of station is too long' if @name.length > 9
+    raise 'The name of station can\'t be nil!' if @name.nil?
+    raise 'You can use only English characters! Digits are not allowed!' if @name !~ STATION_NAME_FORMAT
   end
 end

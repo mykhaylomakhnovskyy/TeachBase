@@ -4,7 +4,6 @@ require_relative 'station'
 require_relative 'passenger_train'
 require_relative 'cargo_train'
 require_relative 'carriage'
-stations = []
 
 menu = proc do
   puts 'Hi there! Please choose one of these:'
@@ -17,25 +16,38 @@ menu = proc do
   puts 'Press any other key to EXIT menu.'
 end
 case1 = proc do
-  puts 'Enter a name of a new station:'
-  station_name = gets.chomp
-  stations.push(Station.new(station_name))
+  begin
+    puts 'Enter a name of a new station:'
+    station_name = gets.chomp
+    Station.new(station_name)
+  rescue RuntimeError => e
+    puts "Try again.\n#{e.message}"
+  end
 end
 case2 = proc do
-  puts 'Enter a number of a new train:'
-  train_number = gets.chomp
-  puts 'Enter a type of a new train(cargo/passenger):'
-  train_type = gets.chomp
-  if train_type == 'cargo'
-    CargoTrain.new(train_number)
-  else
-    PassengerTrain.new(train_number)
+  begin
+    puts 'Enter a number of a new train(###-##):'
+    train_number = gets.chomp
+    puts 'Enter a type of a new train(cargo/passenger):'
+    train_type = gets.chomp
+    if train_type == 'cargo'
+      CargoTrain.new(train_number)
+    else
+      PassengerTrain.new(train_number)
+    end
+  rescue RuntimeError => e
+    puts "Again, please!\n#{e.message}"
   end
 end
 case3 = proc do
   puts 'Enter a number of a train you want to add carriage to:'
   train_number = gets.chomp
-  Train.find(train_number).pin_carriage
+  Train.find(train_number).speed_up(2)
+  begin
+    Train.find(train_number).pin_carriage
+  rescue RuntimeError => e
+    puts "Fix and try again!\n#{e.message}"
+  end
 end
 case4 = proc do
   puts 'Enter a number of the train you want to delete carriage from:'
@@ -76,5 +88,6 @@ loop do
     break
   end
 end
+
 Train.instances
 Carriage.instances

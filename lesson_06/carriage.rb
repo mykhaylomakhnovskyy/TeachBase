@@ -6,7 +6,6 @@ class Carriage
   include InstanceCounter
 
   def initialize
-    puts 'I\'ve been created!'
     register_instance
   end
 

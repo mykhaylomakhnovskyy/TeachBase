@@ -9,6 +9,7 @@ class Train
   attr_reader :number, :type, :carriages
   attr_accessor :company
 
+  TRAIN_NUMBER_FORMAT = /^[a-f0-9]{3}+-*[a-f0-9]{2}$/i.freeze
   @@trains = []
   @@total_instances = 0
   def initialize(number)
@@ -17,13 +18,18 @@ class Train
     @carriages = []
     @@trains.push(self)
     @current_station = -1
+    validate!
     register_instance
+  end
+
+  def speed_up(speed)
+    @speed += speed
   end
 
   protected
 
-  def speed_up(speed)
-    @speed += speed
+  def slow_down
+    @speed = 0
   end
 
   def self.total_instances
@@ -34,8 +40,11 @@ class Train
     @@total_instances = total_instances
   end
 
-  def slow_down
-    @speed = 0
+  def validate!
+    raise 'Number can\'t be nil' if number.nil?
+    raise 'Number has invalid format' if number !~ TRAIN_NUMBER_FORMAT
+
+    true
   end
 
   def amount_of_carriages
@@ -43,6 +52,12 @@ class Train
   end
 
   public
+
+  def valid?
+    validate!
+  rescue RuntimeError
+    false
+  end
 
   def self.find(train_number)
     @@trains.each { |train| return train if train.number == train_number }
