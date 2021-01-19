@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984490e3-0f7b-449e-a9a3-da78d4d4411e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/lesson_06.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cargo_carriage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cargo_train.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/carriage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance_counter.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manufacturer.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger_carriage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/passenger_train.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/route.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/station.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/.idea/lesson_06.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lesson_06/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/cargo_carriage.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/cargo_train.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/carriage.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/instance_counter.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/main.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/manufacturer.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/passenger_carriage.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/passenger_train.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/route.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/station.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson_06/train.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1n3Oj7EIdxHny5Zf8SqEYTYLOGP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -99,7 +96,8 @@
       <updated>1610615439414</updated>
       <workItem from="1610615440527" duration="1118000" />
       <workItem from="1610620850414" duration="328000" />
-      <workItem from="1611051465578" duration="1715000" />
+      <workItem from="1610633658607" duration="8130000" />
+      <workItem from="1611053172760" duration="1046000" />
     </task>
     <servers />
   </component>
@@ -119,7 +117,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/lesson_06@main.rcov" NAME="main Coverage Results" MODIFIED="1611052609857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lesson_06" />
+    <SUITE FILE_PATH="coverage/lesson_06@main.rcov" NAME="main Coverage Results" MODIFIED="1610695814624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lesson_06" />
     <SUITE FILE_PATH="coverage/lesson_05@main.rcov" NAME="main Coverage Results" MODIFIED="1610616083831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lesson_05" />
+    <SUITE FILE_PATH="coverage/lesson_07@main.rcov" NAME="main Coverage Results" MODIFIED="1611054097079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lesson_06" />
   </component>
 </project>
