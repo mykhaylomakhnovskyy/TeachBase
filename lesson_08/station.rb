@@ -5,12 +5,11 @@ class Station
   attr_reader :name
 
   STATION_NAME_FORMAT = /^\D{3,9}$/i.freeze
-  @@stations = []
   def initialize(name)
     @name = name
     @trains = []
     validate!
-    @@stations.push(self)
+    self.class.stations_push(self)
   end
 
   def take_train(train)
@@ -21,8 +20,8 @@ class Station
     @trains.delete(train)
   end
 
-  def each_train
-    @trains.each { |train| yield(train) }
+  def each_train(&block)
+    @trains.each(&block)
   end
 
   def show_all_trains
@@ -30,12 +29,17 @@ class Station
     @trains.each { |train| puts "  Train number: #{train.number}" }
   end
 
+  def self.stations_push(station)
+    @stations ||= []
+    @stations << station
+  end
+
   def self.find(station_name)
-    @@stations.each { |station| return station if station.name == station_name }
+    @stations.each { |station| return station if station.name == station_name }
   end
 
   def self.all
-    @@stations
+    @stations
   end
 
   def validate!

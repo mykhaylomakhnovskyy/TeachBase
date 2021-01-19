@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require_relative 'station'
-require_relative 'passenger_train'
-require_relative 'cargo_train'
-require_relative 'carriage'
-require_relative 'cargo_carriage'
-require_relative 'passenger_carriage'
+require_relative 'Carriages/cargo_carriage'
+require_relative 'Carriages/passenger_carriage'
+require_relative 'Trains/passenger_train'
+require_relative 'Trains/cargo_train'
+require_relative 'Carriages/carriage'
 
 menu = proc do
   puts '+--------Please choose one of these:--------+'
@@ -45,10 +45,13 @@ end
 case3 = proc do
   puts 'Enter a number of a train you want to add carriage to:'
   train_number = gets.chomp
-  puts 'Enter a number of a carriage you want to add:'
+  puts 'Enter a number of a carriage you want to add, a type of the carriage and amount of seats/volume:'
   carriage_number = gets.chomp
+  train_type = gets.chomp
+  size = gets.chomp.to_i
   begin
-    Train.find(train_number).pin_carriage(carriage_number, 30)
+    train = train_type == 'passenger' ? PassengerTrain.find(train_number) : CargoTrain.find(train_number)
+    train.pin_carriage(carriage_number, size)
   rescue RuntimeError => e
     puts "Fix and try again!\n#{e.message}"
   end
@@ -58,17 +61,27 @@ case4 = proc do
   train_number = gets.chomp
   puts 'Enter a number of the carriage you want to delete:'
   carriage_id = gets.chomp.to_i
-  train = Train.find(train_number)
-  train.unpin_carriage(carriage_id)
+  puts 'Enter a type of the train'
+  train_type = gets.chomp
+  begin
+    train = train_type == 'passenger' ? PassengerTrain.find(train_number) : CargoTrain.find(train_number)
+    train.unpin_carriage(carriage_id)
+  rescue RuntimeError => e
+    puts "Fix and try again!\n#{e.message}"
+  end
 end
 case5 = proc do
-  puts 'Enter a number of the train:'
+  puts 'Enter a number of the train, type of train and a name of the station, separating with ENTER:'
   train_number = gets.chomp
-  puts 'Enter a name of the station:'
+  train_type = gets.chomp
   station_name = gets.chomp
-  train = Train.find(train_number)
-  station = Station.find(station_name)
-  station.take_train(train) unless train.nil? || station.nil?
+  begin
+    train = train_type == 'passenger' ? PassengerTrain.find(train_number) : CargoTrain.find(train_number)
+    station = Station.find(station_name)
+    station.take_train(train) unless train.nil? || station.nil?
+  rescue RuntimeError => e
+    puts "Fix and try again!\n#{e.message}"
+  end
 end
 case6 = proc { Station.all.each(&:show_all_trains) }
 case7 = proc do
@@ -117,5 +130,5 @@ train1.pin_carriage('2', 50)
 train2.pin_carriage('3', 50)
 train4.pin_carriage('1', 45)
 case7.call
-Train.instances
-Carriage.instances
+CargoTrain.instances
+PassengerCarriage.instances
