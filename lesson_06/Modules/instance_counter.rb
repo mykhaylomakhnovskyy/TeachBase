@@ -8,8 +8,8 @@ module InstanceCounter
 
   def register_instance
     # This method should increase amount of instances from ctor
-    @instance_iterator = self.class.total_instances + 1
-    self.class.total_instances = @instance_iterator
+    instance_iterator = self.class.total_instances + 1
+    self.class.total_instances = instance_iterator
   end
 
   # Class Methods

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'train'
-require_relative 'passenger_carriage'
+require_relative '../Carriages/passenger_carriage'
 # Passenger Train
 class PassengerTrain < Train
   def pin_carriage

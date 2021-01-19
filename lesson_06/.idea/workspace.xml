@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984490e3-0f7b-449e-a9a3-da78d4d4411e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../lesson_05/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/.idea/lesson_05.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/cargo_carriage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/cargo_train.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/carriage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/instance_counter.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/main.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/manufacturer.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/passenger_carriage.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/passenger_train.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/route.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/station.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lesson_05/train.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cargo_carriage.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cargo_train.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/carriage.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/instance_counter.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.rb" beforeDir="false" afterPath="$PROJECT_DIR$/main.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manufacturer.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger_carriage.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/passenger_train.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/station.rb" beforeDir="false" afterPath="$PROJECT_DIR$/station.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.rb" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1n3Oj7EIdxHny5Zf8SqEYTYLOGP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -61,6 +59,30 @@
       <RACK_CONFIG_SETTINGS_ID NAME="LAUNCH_JS" VALUE="false" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="lesson_06" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" IGNORE_RCOVRT="true" ENABLE_BRANCH_COVERAGE="true" ENABLE_FORKED_COVERAGE="true">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/main.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Ruby.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
@@ -73,6 +95,7 @@
       <updated>1610615439414</updated>
       <workItem from="1610615440527" duration="1118000" />
       <workItem from="1610620850414" duration="328000" />
+      <workItem from="1611051465578" duration="857000" />
     </task>
     <servers />
   </component>
@@ -92,6 +115,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lesson_06@main.rcov" NAME="main Coverage Results" MODIFIED="1611052351818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lesson_06" />
     <SUITE FILE_PATH="coverage/lesson_05@main.rcov" NAME="main Coverage Results" MODIFIED="1610616083831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lesson_05" />
   </component>
 </project>

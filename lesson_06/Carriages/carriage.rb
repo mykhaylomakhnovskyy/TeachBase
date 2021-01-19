@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'instance_counter'
+require_relative '../Modules/instance_counter'
 # Carriage Class
 class Carriage
   include InstanceCounter
@@ -9,12 +9,11 @@ class Carriage
     register_instance
   end
 
-  @@total_instances = 0
   def self.total_instances
-    @@total_instances
+    @total_instances ||= 0
   end
 
-  def self.total_instances=(total_instances)
-    @@total_instances = total_instances
+  class << self
+    attr_writer :total_instances
   end
 end
