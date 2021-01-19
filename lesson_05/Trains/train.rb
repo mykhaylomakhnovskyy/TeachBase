@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'instance_counter'
-require_relative 'manufacturer'
+require_relative '../Modules/instance_counter'
+require_relative '../Modules/manufacturer'
 # Train
 class Train
   include Manufacturer
@@ -10,13 +10,11 @@ class Train
   attr_accessor :company
 
   TRAIN_NUMBER_FORMAT = /^[a-f0-9]{3}+-*[a-f0-9]{2}$/i.freeze
-  @@trains = []
-  @@total_instances = 0
   def initialize(number)
     @number = number
     @speed = 0
     @carriages = []
-    @@trains.push(self)
+    self.class.trains_push(self)
     @current_station = -1
     validate!
     register_instance
@@ -27,18 +25,6 @@ class Train
   end
 
   protected
-
-  def slow_down
-    @speed = 0
-  end
-
-  def self.total_instances
-    @@total_instances
-  end
-
-  def self.total_instances=(total_instances)
-    @@total_instances = total_instances
-  end
 
   def validate!
     raise 'Number can\'t be nil' if number.nil?
@@ -53,6 +39,19 @@ class Train
 
   public
 
+  def self.trains_push(train)
+    @trains ||= []
+    @trains << train
+  end
+
+  def self.total_instances
+    @total_instances ||= 0
+  end
+
+  class << self
+    attr_writer :total_instances
+  end
+
   def valid?
     validate!
   rescue RuntimeError
@@ -60,7 +59,7 @@ class Train
   end
 
   def self.find(train_number)
-    @@trains.each { |train| return train if train.number == train_number }
+    @trains.each { |train| return train if train.number == train_number }
   end
 
   def current_speed

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require_relative 'station'
-require_relative 'passenger_train'
-require_relative 'cargo_train'
-require_relative 'carriage'
+require_relative 'Trains/passenger_train'
+require_relative 'Trains/cargo_train'
+require_relative 'Carriages/carriage'
 
 menu = proc do
   puts 'Hi there! Please choose one of these:'
@@ -89,5 +89,5 @@ loop do
   end
 end
 
-Train.instances
+CargoTrain.instances
 Carriage.instances
